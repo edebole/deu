@@ -1,9 +1,9 @@
 // image section
 const img = document.getElementById('img')
 const fixedLeft = 450
-
-// timer image section
-const timer = document.getElementById('timer')
+const TIME_REMAINING = 60 * 5 // 5 min
+const HIDDEN_OBJECT_FOUND = 15
+const HIDDEN_OBJECT_NOT_FOUND = 10
 
 // Function for displaying images randomly
 function randomImages () {
@@ -37,12 +37,6 @@ function randomImageBox () {
 
     createdTime = Date.now() // set the time from 0 to 5000 milli second (5 seconds)
   }, time)
-}
-
-document.getElementById('img').onclick = function () {
-  img.style.display = 'none'
-
-  randomImageBox()
 }
 
 randomImageBox()

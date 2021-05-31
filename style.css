@@ -12,29 +12,7 @@
 }
 */
 
-#time_div p {
-  padding-left: 130px;
-  padding-top: 50px;
-  font-weight: bold;
-  font-size: 25px;
-  font-family: Verdana;
-}
-
-#timer {
-  height: 350px;
-  width: 250px;
-  position: fixed;
-  background-image: url("images/timer.jpg");
-  background-repeat: no-repeat;
-  position: absolute;
-  background-color: none;
-  top:115px;
-  left: 50px;
-}
-
 #font_time {
-  padding-left: 140px;
-  padding-top: 270px;
   font-weight: bold;
   font-family: Verdana;
   font-family: 25px;
@@ -80,19 +58,19 @@
   font-size: 25px;
 }
 
-body {
+body, html {
   background-color: #d6f1ff;
+  overflow: hidden;
 }
 
 #backgroundImage {
   background-image: url("images/background1.png");
-  position: fixed;
+  padding-top: 50vh;
   border-radius: 15px;
-  position: absolute;
-  width: 1440px;
-  height: 1024px;
-  top: 25px;
-  left: 450px;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #img {
@@ -100,4 +78,5 @@ body {
   background-repeat: no-repeat;
   display: none;
   border-radius: 15px;
+  z-index: 9999;
 }
