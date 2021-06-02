@@ -12,10 +12,21 @@
 }
 */
 
+.right {
+  top: 3%;
+  position: absolute;
+  left: 95%;
+}
+
+
 #font_time {
   font-weight: bold;
   font-family: Verdana;
   font-family: 25px;
+  position: absolute;
+  top: 3%;
+  margin-left: 0.60em;
+  font-size: larger;
 }
 
 #user_time {
@@ -66,11 +77,22 @@ body, html {
 #backgroundImage {
   background-image: url("images/background1.png");
   padding-top: 50vh;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
   border-radius: 15px;
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+#introImage {
+  background-image: url("images/intro_desktop.png");
+  padding-top: 100vh;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 #img {
@@ -79,4 +101,22 @@ body, html {
   display: none;
   border-radius: 15px;
   z-index: 9999;
+}
+
+.transparent {
+  background-color: Transparent;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.center {
+   width: 300px;
+   height: 300px;
+   position: absolute !important;
+   left: 70%;
+   top: 40%; 
+   margin-left: -150px;
+   margin-top: -150px;
 }
