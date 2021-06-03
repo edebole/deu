@@ -7,6 +7,8 @@
   <style type="text/css">
     @import 'style.css';
   </style>
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap" rel="stylesheet"> 
   <!-- CSS only -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
@@ -26,26 +28,24 @@
 
 <body>
   <!-- <div id="header"> </div> -->
-  <div class="container-fluid">
-    <div id="introImage" class="wrapper">
-      <div class="btn-group-vertical center">
-        <button onclick="location.href = 'game.html'"
-          type="button"
-          class="text-center btn-lg btn-outline-dark mb-3 transparent uppercase"
-        >
-          Jugar
-        </button>
-        <button type="button"
-          class="text-center btn-lg btn-outline-dark transparent uppercase"
-        >
-          Opciones
-        </button>
-      </div>
+  <div id="canvas">
+      <div id="introImage" class="wrapper">
+        <div class="btn-group-vertical center">
+          <button onclick="location.href = 'game.html'"
+            type="button"
+            class="text-center btn-lg btn-outline-dark mb-3 transparent uppercase btn_font"
+          >
+            Jugar
+          </button>
+          <button type="button"
+            class="text-center btn-lg btn-outline-dark transparent uppercase btn_font"
+          >
+            Opciones
+          </button>
+        </div>
     </div>
   </div>
   <!--Javascript file named game_script-->
-  <script src="game_script.js"></script>
-  <script src="timer.js"></script>
 </body>
 
 </html>

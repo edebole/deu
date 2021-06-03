@@ -15,18 +15,22 @@
 .right {
   top: 3%;
   position: absolute;
-  left: 95%;
+  left: 90%;
 }
 
+.btn_font {
+  font-family: 'Odibee Sans', cursive !important; 
+  font-size: 50px !important;
+}
 
 #font_time {
   font-weight: bold;
-  font-family: Verdana;
+  font-family: 'Odibee Sans', cursive;
   font-family: 25px;
   position: absolute;
   top: 3%;
   margin-left: 0.60em;
-  font-size: larger;
+  font-size: 30px;
 }
 
 #user_time {
@@ -75,24 +79,35 @@ body, html {
 }
 
 #backgroundImage {
-  background-image: url("images/background1.png");
-  padding-top: 50vh;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  border-radius: 15px;
-  background-position: center center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url("images/background1-1024.png");
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 1024px;
+  height: 728px;
+  /* background-image: url("images/background1.png");
+  width: 80em;
+  height: 60em;
+  top: 115px;
+  left: 450px;
+  border-radius: 15px; */
 }
 
 #introImage {
-  background-image: url("images/intro_desktop.png");
+  background-image: url("images/intro_desktop1024.png");
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 1024px;
+  height: 728px;
+  /* background-image: url("images/intro_desktop.png");
   padding-top: 100vh;
   background-position: center center;
   background-attachment: fixed;
   background-size: contain;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 
 #img {
@@ -115,8 +130,29 @@ body, html {
    width: 300px;
    height: 300px;
    position: absolute !important;
-   left: 70%;
-   top: 40%; 
+   left: 78%;
+   top: 30%; 
    margin-left: -150px;
    margin-top: -150px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+#canvas {
+  outline:1px solid black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 1024px;
+  height: 728px;
+  background: white;
 }

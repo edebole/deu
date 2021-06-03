@@ -1,42 +1,79 @@
 // image section
-const img = document.getElementById('img')
+const canvas = document.getElementById('backgroundImage')
 const fixedLeft = 450
 const TIME_REMAINING = 60 * 5 // 5 min
 const HIDDEN_OBJECT_FOUND = 15
 const HIDDEN_OBJECT_NOT_FOUND = 10
+const numberMaxOfTrash = 8;
+
+let countItemsImg =0;
 
 // Function for displaying images randomly
 function randomImages () {
+  // maximo 3 imagenes al mismo tiempo
+  if (countItemsImg < 3)
+    { 
+      countItemsImg++
+      createImgElement();
+    }
+}
+
+
+function gameRunning(){
+  // cada 3 seg agrega basura, si es que puede
+  setInterval(function(){ 
+    randomImages(); 
+  }, 3000);
+    
+}
+
+gameRunning();
+
+
+/* 
+  ---------------------------------------------
+  ------------------Funciones------------------
+  ---------------------------------------------
+  ---------------------------------------------
+*/
+
+
+// devuelve un numero entre el min y max
+function randomNumber(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
+}
+
+// crea dinamicamente un html tag <img>
+function createImgElement(){
+
+  var number = randomNumberTrash();
+  var img = new Image(100, 100);
+  img.id= "img" + number;
+  img.src = 'images/trash/img' + number + '.png';
+  img.onclick = linkListener;
+  randomImageLocation(img);
+  canvas.appendChild(img);
+
+}
+
+// onClick de cada imagen
+function linkListener() {
+  //alert(this.id);
+  this.remove()
+  countItemsImg--;
+}
+
+
+function randomImageLocation (img) {
   img.style.display = 'block' // this line displays the image
-  img.style.width = '500px'
-  img.style.height = '500px'
-  // make the images random
-  img.style.backgroundImage = 'url(images/trash/img' + Math.floor(1 + 8 * Math.random()) + '.png'
-  // alert();
-}
-
-// create a random image location within the border of the background image
-function randomImageLocation () {
   img.style.position = 'relative' // to set the position of the picture (relative) to the background
-  // random location
-  const locationLeft = Math.floor(Math.random() * 1024)
-  const locationTop = Math.floor(Math.random())
-
-  img.style.left = fixedLeft + locationLeft + 'px'
-  img.style.top = locationTop + 'px'
+  const locationLeft = Math.floor(Math.random() * 900)
+  const locationTop = randomNumber(400, 600);
+  img.style.left = locationLeft + 'px';
+  img.style.top = locationTop  + 'px';
 }
 
-// create the random images
-function randomImageBox () {
-  let time = Math.random()
-  time = 1000 * time
-
-  setTimeout(function () {
-    randomImages()
-    randomImageLocation()
-
-    createdTime = Date.now() // set the time from 0 to 5000 milli second (5 seconds)
-  }, time)
+// devuelve un numero de 1 a numberMaxOfTrash(8 por ahora img8)
+function randomNumberTrash(){
+  return randomNumber(1, numberMaxOfTrash);
 }
-
-randomImageBox()
