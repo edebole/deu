@@ -5,6 +5,7 @@
     <!--Style of the game -->
     <style type="text/css">
       @import 'style.css';
+      @import 'grid.css';
     </style>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
@@ -19,7 +20,7 @@
 <!--Body of the game -->
   <body>
     <!-- <div id="header"> </div> -->
-    <div id="canvas">
+     <div id="canvas">
 
       <div id="backgroundImage" class="wrapper">
         <p id="font_time">TIEMPO RESTANTE: <span id="time">05:00</span>!</p>
@@ -27,12 +28,14 @@
         <div class="right">
           <button class="btn" onclick="location.href = 'index.html'"><i class="fas fa-power-off fa-3x mb-2"></i></button>
           <button class="btn"><i class="fas fa-cog fa-3x"></i></button>
+        </div>
+        <div class="gallery" id="gallery">
           
         </div>
       </div> 
     <div>
-    <!--Javascript file named game_script-->
+    <!-- Javascript file named game_script -->
     <script src="game_script.js"></script>
     <script src="timer.js"></script>
   </body>
-</html>
+</html> 
