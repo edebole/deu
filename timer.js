@@ -1,7 +1,21 @@
 /* globals TIME_REMAINING HIDDEN_OBJECT_FOUND HIDDEN_OBJECT_NOT_FOUND randomImageBox img */
+// MAIN DEL JUEGO
+
+let timer = TIME_REMAINING;
+
 function startTimer (duration, display) {
-  let timer = duration; let minutes; let seconds
-  setInterval(function () {
+  backgroundImage.style.backgroundImage = "url('images/background1-1024.png')";  
+  document.getElementById('options_and_time').style.display='block'
+  let minutes; let seconds;
+  var intervalTimer = setInterval(function () {
+    randomImages();
+    if (timer == 0){
+      clearInterval(intervalTimer);
+      deleteAllImg();
+      gameOver();
+    }
+    // condicion de que gano el juego
+
     minutes = parseInt(timer / 60, 10)
     seconds = parseInt(timer % 60, 10)
 
@@ -11,14 +25,8 @@ function startTimer (duration, display) {
     display.textContent = minutes + ':' + seconds
 
     if (--timer < 0) {
-      timer = duration
-    }
-    document.getElementById('img').onclick = function () {
-      img.style.display = 'none'
-      timer += HIDDEN_OBJECT_FOUND
-      console.log('objetos encontrado, se aumentaran: ', HIDDEN_OBJECT_FOUND)
-      console.log(timer)
-      randomImageBox()
+      timer = 0
+      
     }
 
     document.getElementById('backgroundImage').onclick = function () {
@@ -29,7 +37,26 @@ function startTimer (duration, display) {
   }, 1000)
 }
 
-window.onload = function () {
-  const display = document.querySelector('#time')
-  startTimer(TIME_REMAINING, display)
+
+  // window.onload = function () {
+  //   const display = document.querySelector('#time')
+  //   startTimer(TIME_REMAINING, display)
+  // }
+
+
+// linkListener funcion onClick de cada imagen (Basura)
+function linkListener() {
+  this.remove()
+  timer += HIDDEN_OBJECT_FOUND
+  console.log('objetos encontrado, se aumentaran: ', HIDDEN_OBJECT_FOUND)
+  console.log(timer)
+  countItemsImg--;
+}
+
+function deleteAllImg(){
+  for (var i = 0; i < 8; i++) {
+    let img = document.getElementById('img'+i);
+    console.log(img);
+    if (img != null){ img.remove()}
+ }
 }

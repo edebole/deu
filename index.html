@@ -3,12 +3,14 @@
 
 <head>
   <title>Juego</title>
+  <meta charset="UTF-8">
+  <meta content="origin" name="referrer">
   <!--Style of the game -->
   <style type="text/css">
     @import 'style.css';
   </style>
-      <link rel="preconnect" href="https://fonts.gstatic.com">
-      <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap" rel="stylesheet"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet"> 
   <!-- CSS only -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
@@ -29,16 +31,18 @@
 <body>
   <!-- <div id="header"> </div> -->
   <div id="canvas">
-      <div id="introImage" class="wrapper">
+      <div id="introImage" class="wrapper" title="Imagen de fondo a color, persona tirando basura a un cesto">
         <div class="btn-group-vertical center">
           <button onclick="location.href = 'game.html'"
             type="button"
             class="text-center btn-lg btn-outline-dark mb-3 transparent uppercase btn_font"
+            aria-label="Jugar"
           >
             Jugar
           </button>
           <button type="button"
             class="text-center btn-lg btn-outline-dark transparent uppercase btn_font"
+            aria-label="Opciones"
           >
             Opciones
           </button>
